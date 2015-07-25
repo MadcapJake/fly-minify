@@ -4,7 +4,7 @@
   </a>
 </div>
 
-> [Minify](https://github.com/MadcapJake/fly-minify) plugin for _[Fly][fly]_.
+> [Minify](https://coderaiser.github.io/minify/) plugin for _[Fly][fly]_.
 
 [![][fly-badge]][fly]
 [![npm package][npm-ver-link]][releases]
@@ -13,7 +13,14 @@
 [![][mit-badge]][mit]
 
 ## Usage
-> Check out the [documentation](PLUGIN_DOCUMENTATION) to see the available options.
+This plugin works for `js`, `html`, `css`, and `img` files.  Just pass one of those as `opts.ext` and you'll be good to go!
+
+> Currently I'm aware of no relevant options for this package.  If you think `name` (or somehow `stream`) could be of use, they will properly pass through.  
+
+
+> If you would like more control over the minifiers, you'll need to either create a separate plugin for a minifier package with more control, submit a PR to `minify`, and/or submit a PR to `minify`'s deps.
+
+> Whatever you decide, let me know how it works out or if you need help!
 
 ### Install
 
@@ -25,7 +32,24 @@ npm install -D fly-minify
 
 ```js
 export default function* () {
-  yield ...
+    yield this.tasks.html()
+    yield this.tasks.javascript()
+}
+
+export function* html () {
+    yield this.clear("lib/html")
+    yield this
+        .source("src/**/*.html")
+        .minify({ ext: "html" })
+        .target("lib/html")
+}
+
+export function* javascript () {
+    yield this.clear("lib/js")
+    yield this
+        .source("src/**/*.js")
+        .minify({ ext: "js" })
+        .target("lib/js")
 }
 ```
 
