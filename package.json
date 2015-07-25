@@ -27,7 +27,8 @@
     "url": "http://github.com/MadcapJake"
   },
   "dependencies": {
-    "minify": "^1.4.19"
+    "minify": "^1.4.19",
+    "object-assign": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^0.21.2",
