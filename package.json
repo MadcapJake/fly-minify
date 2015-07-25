@@ -8,7 +8,7 @@
   "files": [
     "index.js"
   ],
-  "keywords":[
+  "keywords": [
     "fly",
     "fly-plugin",
     "minify"
@@ -27,7 +27,7 @@
     "url": "http://github.com/MadcapJake"
   },
   "dependencies": {
-
+    "minify": "^1.4.19"
   },
   "devDependencies": {
     "eslint": "^0.21.2",
