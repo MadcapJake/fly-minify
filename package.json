@@ -1,6 +1,6 @@
 {
   "name": "fly-minify",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Minify plugin for Fly.",
   "license": "MIT",
   "repository": "https://github.com/MadcapJake/fly-minify",
