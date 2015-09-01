@@ -2,9 +2,9 @@ const assign = require("object-assign")
 const minifier = require("minify")
 module.exports = function () {
   const minify = (src, opts, cb) => {
-    minifier(assign(opts, { data: src }), function (err, data) {
+    minifier(assign(opts, { data: src.toString() }), function (err, data) {
       if (err) throw err
-      cb(null, data)
+      cb(null, { code: data, ext: opts.ext })
     })
   }
 
